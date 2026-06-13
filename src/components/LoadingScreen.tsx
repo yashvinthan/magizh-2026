@@ -102,7 +102,7 @@ export function LoadingScreen({ onFinished }: LoadingScreenProps) {
                 className="font-dune text-3xl sm:text-5xl md:text-6xl tracking-[0.2em] text-transparent select-none leading-none whitespace-nowrap opacity-20"
                 style={{ WebkitTextStroke: '1px #d37335' }}
               >
-                MAGIZH <span style={{ WebkitTextStroke: '1px #e8dcc7' }}>2026</span>
+                MAGIZH <span style={{ WebkitTextStroke: '1px #e8dcc7' }}>'26</span>
               </h1>
 
               {/* Top Filled (Rising Masked State using clip-path) */}
@@ -110,7 +110,7 @@ export function LoadingScreen({ onFinished }: LoadingScreenProps) {
                 className="absolute inset-0 font-dune text-3xl sm:text-5xl md:text-6xl tracking-[0.2em] bg-gradient-to-b from-[#ebdcb9] via-[#e28b49] to-dune-spice bg-clip-text text-transparent select-none leading-none whitespace-nowrap"
                 style={{ clipPath: `inset(${100 - progress}% 0% 0% 0%)` }}
               >
-                MAGIZH <span className="bg-gradient-to-b from-white via-dune-sand to-[#ebdcb9] bg-clip-text text-transparent">2026</span>
+                MAGIZH <span className="bg-gradient-to-b from-white via-dune-sand to-[#ebdcb9] bg-clip-text text-transparent">'26</span>
               </motion.h1>
 
               {/* Glowing Sand Fill Level Sweep Line */}
