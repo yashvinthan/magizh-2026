@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Expand, Gamepad2, Keyboard, LoaderCircle, Minimize2, Monitor, Play, RotateCcw, X } from 'lucide-react';
 
 type PlayerMessage = {
@@ -9,6 +9,7 @@ type PlayerMessage = {
 
 export function DuneGame() {
   const shellRef = useRef<HTMLElement>(null);
+  const pendingScrollTopRef = useRef<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isSectionVisible, setIsSectionVisible] = useState(true);
@@ -34,13 +35,36 @@ export function DuneGame() {
     return () => observer.disconnect();
   }, [isOpen]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isOpen || isFullscreen) return;
-    const frame = requestAnimationFrame(() => {
-      shellRef.current?.scrollIntoView({ block: 'start' });
-      window.scrollBy({ top: -86 });
+
+    let secondFrame = 0;
+    const firstFrame = requestAnimationFrame(() => {
+      secondFrame = requestAnimationFrame(() => {
+        const mountedTop = shellRef.current
+          ? window.scrollY + shellRef.current.getBoundingClientRect().top - 86
+          : null;
+        const targetTop = pendingScrollTopRef.current ?? mountedTop;
+
+        if (targetTop !== null) {
+          window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+          pendingScrollTopRef.current = null;
+
+          window.setTimeout(() => {
+            if (!shellRef.current) return;
+            const distanceFromHeader = Math.abs(shellRef.current.getBoundingClientRect().top - 86);
+            if (distanceFromHeader > 24) {
+              shellRef.current.scrollIntoView({ block: 'start', behavior: 'auto' });
+            }
+          }, 650);
+        }
+      });
     });
-    return () => cancelAnimationFrame(frame);
+
+    return () => {
+      cancelAnimationFrame(firstFrame);
+      cancelAnimationFrame(secondFrame);
+    };
   }, [isOpen, isFullscreen, session]);
 
   useEffect(() => {
@@ -77,6 +101,10 @@ export function DuneGame() {
   }, [isOpen]);
 
   const bootGame = () => {
+    if (shellRef.current) {
+      pendingScrollTopRef.current =
+        window.scrollY + shellRef.current.getBoundingClientRect().top - 86;
+    }
     setStatus('loading');
     setErrorMessage('');
     setIsOpen(true);
@@ -101,7 +129,7 @@ export function DuneGame() {
   if (!isOpen) {
     return (
       <>
-        <section ref={shellRef} className="dune-original-launcher" aria-label="Play the original Dune DOS game">
+        <section id="dune-game" ref={shellRef} className="dune-original-launcher" aria-label="Play the original Dune DOS game">
           <div className="dune-original-copy">
             <span>C:\\MAGIZH\\ARCHIVE&gt; DUNE.BAT</span>
             <h2>DUNE</h2>
@@ -118,11 +146,18 @@ export function DuneGame() {
         </section>
 
         {!isSectionVisible && !isDiscoveryDismissed && (
-          <aside className="dune-discovery-launcher" aria-label="Dune DOS game available">
-            <button className="dune-discovery-close" onClick={dismissDiscovery} aria-label="Dismiss game shortcut">
+          <aside className="dune-discovery-launcher" aria-label="Dune DOS game available" onClick={bootGame}>
+            <button
+              className="dune-discovery-close"
+              onClick={(event) => {
+                event.stopPropagation();
+                dismissDiscovery();
+              }}
+              aria-label="Dismiss game shortcut"
+            >
               <X />
             </button>
-            <button className="dune-discovery-action" onClick={bootGame}>
+            <button className="dune-discovery-action">
               <span className="dune-discovery-icon"><Gamepad2 /></span>
               <span>
                 <small>Hidden transmission // DOS archive</small>
@@ -138,7 +173,7 @@ export function DuneGame() {
   }
 
   return (
-    <section ref={shellRef} className={`dune-emulator-shell ${isFullscreen ? 'dune-emulator-fullscreen' : ''}`} aria-label="Dune DOS game player">
+    <section id="dune-game" ref={shellRef} className={`dune-emulator-shell ${isFullscreen ? 'dune-emulator-fullscreen' : ''}`} aria-label="Dune DOS game player">
       <header className="dune-emulator-header">
         <div><Gamepad2 /><span>DUNE.EXE</span><small>CRYO INTERACTIVE // 1992</small></div>
         <nav aria-label="Game player controls">
