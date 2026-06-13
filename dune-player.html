@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dune DOS Player</title>
+    <link rel="stylesheet" href="/js-dos/js-dos.css" />
+    <style>
+      html, body, #dos { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #000; }
+      body { cursor: default; }
+      #dos, #dos * { cursor: default !important; }
+      #dos .jsdos-rso { width: 100% !important; height: 100% !important; }
+    </style>
+  </head>
+  <body>
+    <div id="dos"></div>
+    <script>
+      // Keyboard locking is only allowed in a top-level page. The iframe still
+      // receives normal keyboard input, so make this optional API a no-op.
+      if (navigator.keyboard?.lock) {
+        navigator.keyboard.lock = async () => undefined;
+      }
+    </script>
+    <script src="/js-dos/js-dos.js"></script>
+    <script>
+      const notify = (type, message) => parent.postMessage({ source: 'dune-player', type, message }, location.origin);
+
+      addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') parent.postMessage({ source: 'dune-player', type: 'exit' }, location.origin);
+      });
+
+      addEventListener('error', (event) => notify('error', event.message || 'The DOS runtime failed.'));
+      addEventListener('unhandledrejection', (event) => {
+        const reason = event.reason?.message || String(event.reason || 'The DOS runtime failed.');
+        if (reason.includes("lock() must be called from a primary top-level browsing context")) {
+          event.preventDefault();
+          return;
+        }
+        notify('error', reason);
+      });
+
+      async function boot() {
+        notify('loading');
+        const bundleUrl = `/dune/dune.jsdos?v=${Date.now()}`;
+        const response = await fetch(bundleUrl, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`Game archive request failed (${response.status}). Restart the dev server.`);
+
+        const archive = await response.arrayBuffer();
+        const signature = new Uint8Array(archive, 0, Math.min(4, archive.byteLength));
+        if (signature[0] !== 0x50 || signature[1] !== 0x4b) {
+          throw new Error('Game archive response is not a ZIP file. Restart the Vite dev server and retry.');
+        }
+
+        const archiveBlob = URL.createObjectURL(new Blob([archive], { type: 'application/zip' }));
+        window.Dos(document.getElementById('dos'), {
+          url: archiveBlob,
+          pathPrefix: '/js-dos/emulators/',
+          backend: 'dosboxX',
+          backendLocked: true,
+          autoStart: true,
+          kiosk: true,
+          noNetworking: true,
+          noCloud: true,
+          autoSave: true,
+          mouseCapture: false,
+          imageRendering: 'pixelated',
+          renderAspect: '4/3',
+          theme: 'dark'
+        });
+        notify('running');
+      }
+
+      boot().catch((error) => notify('error', error.message || 'Unable to boot Dune.'));
+    </script>
+  </body>
+</html>
