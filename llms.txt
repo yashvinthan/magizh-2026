@@ -1,0 +1,121 @@
+# MAGIZH 2026 | National Level Symposium
+
+MAGIZH 2026 is a premier National Level Technical & Non-Technical Symposium hosted by the MGR YUVA Chapter & Young Indians (Yi) at Dr. M.G.R. Educational and Research Institute. 
+
+## Key Details
+- **Date**: 22 June 2026
+- **Location**: Dr. M.G.R. Educational and Research Institute, Periyar E.V.R. High Road, Maduravoyal, Chennai, Tamil Nadu - 600095
+- **Official Website**: https://magizh.yashvinthan.site/
+- **Organized By**: MGR YUVA Chapter
+
+---
+
+## Event Timeline (Schedule)
+- **08:30 AM**: Registration (Arrival)
+- **09:30 AM**: Inauguration Ceremony
+- **11:00 AM**: First Event Slot (Events begin / Paper Presentation opens)
+- **01:00 PM**: Lunch Break (First slot concludes)
+- **01:30 PM**: Second Event Slot (Afternoon events / Paper Presentation continues)
+- **03:30 PM**: Events Conclude (All competition slots close)
+- **04:30 PM**: Valedictory Ceremony (Closing)
+- **05:00 PM**: Prize Distribution (Finale)
+
+---
+
+## Event Slot Locations (Venue)
+- **Auditorium**: Group Dance (Morning)
+- **Sun Java**: Paper Presentation (Morning & Afternoon)
+- **Civil Smart**: Solo Singing (Morning) / Adaptune (Afternoon)
+- **Classroom**: Adzap (Morning) / Face Painting (Afternoon)
+- **Lab**: Poster Designing (Morning) / Shark Tank (Afternoon)
+
+---
+
+## General Rules & Guidelines
+- A valid institutional student ID card is mandatory for campus entry.
+- Only registered participants are permitted inside the campus.
+- Collect the event wristband from the registration desk after fee verification.
+- Attach payment proof while completing the registration form.
+- The judges' decision is final and binding.
+- Political, religious, and negative themes are strictly prohibited.
+
+---
+
+## Detailed Event Descriptions
+
+### 1. Paper Presentation (Technical Event)
+- **Description**: Present original work in technology, innovation, or social impact before a technical jury.
+- **Time**: 11:00 AM - 3:30 PM (Sun Java)
+- **Team Size**: Solo or maximum 2 members.
+- **Key Rules**:
+  - Submit an abstract (~250 words) to `mgryuva24@gmail.com` before the deadline.
+  - Bring 2 hard copies and 1 soft copy on a USB drive (PPT or PDF format).
+  - Presentation is 5 mins long + 2 mins Q&A.
+  - Disclosure of any AI-generated content is required.
+
+### 2. Poster Designing (Technical Event)
+- **Description**: Create a high-impact digital poster that connects the announced theme to a Sustainable Development Goal (SDG).
+- **Time**: 11:00 AM - 1:00 PM (Lab)
+- **Team Size**: Individual event.
+- **Key Rules**:
+  - Design digitally on the day of the event using Canva, Photoshop, or similar software.
+  - Include a creative slogan/tagline in English or Tamil.
+  - No pre-made, watermarked, or AI-generated content.
+  - Submit high-res JPG/PNG (1080x1350 or 1920x1080).
+
+### 3. Shark Tank (Technical Event)
+- **Description**: Pitch an original product, venture, or solution and defend its value before the judging panel.
+- **Time**: 1:30 PM - 3:30 PM (Lab)
+- **Team Size**: 2 to 4 members.
+- **Key Rules**:
+  - Maximum 5 minutes for presentation/pitch.
+  - PowerPoint presentations are highly encouraged.
+  - All ideas, disciplines, and domains are welcome.
+
+### 4. Adaptune (Non-Technical Individual Event)
+- **Description**: Adapt your movement instantly as changing music tracks test rhythm, versatility, and stage control.
+- **Time**: 1:30 PM - 3:30 PM (Civil Smart)
+- **Team Size**: Solo event.
+- **Key Rules**:
+  - Music played for 2 minutes with sudden track changes.
+  - A pause longer than 8 seconds results in disqualification.
+
+### 5. Solo Singing (Non-Technical Individual Event)
+- **Description**: Deliver a live solo vocal performance in any language or genre.
+- **Time**: 11:00 AM - 1:00 PM (Civil Smart)
+- **Team Size**: Solo event.
+- **Key Rules**:
+  - Duration is 3 minutes + 1 minute setup.
+  - Bring backing tracks on a USB drive as MP3 (no lead vocals or pre-recorded lead melody).
+
+### 6. Group Dance (Non-Technical Group Event)
+- **Description**: Perform a coordinated three-minute group routine with energy, expression, and visual impact.
+- **Time**: 11:00 AM - 1:00 PM (Auditorium)
+- **Team Size**: 3 to 7 members.
+- **Key Rules**:
+  - Time limit is 3 minutes.
+  - Bring track on a USB drive. All dance styles allowed.
+
+### 7. Face Painting (Non-Technical Group Event)
+- **Description**: Interpret the theme "Seasons" through an original face-painting composition.
+- **Time**: 1:30 PM - 3:30 PM (Classroom)
+- **Team Size**: 2 members (1 painter, 1 model).
+- **Key Rules**:
+  - Time limit is 60 minutes.
+  - Bring all own painting materials. No stencils/outlines.
+
+### 8. Adzap (Non-Technical Group Event)
+- **Description**: Create and perform a fast, persuasive advertisement for a product revealed on the spot.
+- **Time**: 11:00 AM - 1:00 PM (Classroom)
+- **Team Size**: 3 to 4 members.
+- **Key Rules**:
+  - Time limit is 3 minutes.
+  - Product assigned on the spot. Vulgarity leads to disqualification.
+
+---
+
+## Frequently Asked Questions (FAQ)
+* **How do I register?** Registration is completed online through our secure form portal. You must upload payment proof to complete registration.
+* **Are certificates provided?** Yes, all validated attendees and winners will receive authorized digital certificates from the MGR YUVA Chapter.
+* **Is food provided?** Sustenance (lunch) will be distributed during the Interval phase. Accommodation is not provided.
+* **Who can participate?** Only active university/college students with a valid institutional student ID card.
