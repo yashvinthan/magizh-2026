@@ -1,0 +1,27 @@
+# robots.txt for MAGIZH 2026 - AI & Human friendly
+User-agent: *
+Allow: /
+
+# AI Agent Crawlers explicitly allowed for LLM Indexing & Search
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://magizh.yashvinthan.site/sitemap.xml

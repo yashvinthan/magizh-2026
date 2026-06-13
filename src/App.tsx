@@ -134,6 +134,8 @@ export default function App() {
     else setMode('english');
   };
 
+  const [showCreatorEgg, setShowCreatorEgg] = useState(false);
+
   const [activeEventSlug, setActiveEventSlug] = useState<string | null>(() => readEventSlug());
   const [isLoading, setIsLoading] = useState(() => !readEventSlug());
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -193,9 +195,72 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  useEffect(() => {
+    let inputBuffer = '';
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const activeEl = document.activeElement;
+      if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.getAttribute('contenteditable') === 'true')) {
+        return;
+      }
+      inputBuffer += e.key.toLowerCase();
+      if (inputBuffer.length > 20) {
+        inputBuffer = inputBuffer.slice(-20);
+      }
+      if (inputBuffer.includes('yash') || inputBuffer.includes('creator')) {
+        setShowCreatorEgg(true);
+        inputBuffer = '';
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    console.log(
+      "%c✨ MAGIZH 2026 ✨%c\n\nMade with 🧡 by %cYashvinthan M%c\n\n%c[Sietch Security Protocol Level 9 Active - Type 'yash' to unlock creator module]",
+      "color: #ebd197; font-family: monospace; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px rgba(235,209,151,0.5);",
+      "color: #a8a29e; font-family: monospace; font-size: 14px;",
+      "color: #d37335; font-family: monospace; font-size: 16px; font-weight: bold; text-shadow: 0 0 8px rgba(211,115,53,0.6);",
+      "color: #a8a29e; font-family: monospace; font-size: 14px;",
+      "color: #78716c; font-style: italic; font-family: monospace;"
+    );
+  }, []);
+
   const activeEvent = getEventBySlug(activeEventSlug);
   if (activeEvent) {
-    return <EventDetailPage event={activeEvent} onBack={() => { window.location.hash = 'events'; }} />;
+    return (
+      <>
+        <EventDetailPage event={activeEvent} onBack={() => { window.location.hash = 'events'; }} />
+        {/* Creator Easter Egg Modal */}
+        <AnimatePresence>
+          {showCreatorEgg && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 50 }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9999] w-[90%] max-w-md bg-black/95 border border-dune-spice/80 p-8 rounded shadow-[0_0_50px_rgba(211,115,53,0.5)] backdrop-blur-md font-mono text-center"
+            >
+              <div className="w-12 h-12 rounded-full border border-dune-spice/60 flex items-center justify-center mx-auto mb-4 animate-pulse text-dune-spice text-xl">
+                ⚡
+              </div>
+              <h3 className="text-white text-[10px] tracking-[0.25em] uppercase mb-2">CREATOR PROTOCOL DECRYPTED</h3>
+              <p className="text-dune-spice text-xl font-bold tracking-wider my-4">
+                MADE BY YASHVINTHAN M
+              </p>
+              <p className="text-dune-sand-muted text-[9px] uppercase tracking-widest mt-4">
+                [ SIETCH DEPLOYMENT RE-ENFORCED // 100% RESIDENCE ]
+              </p>
+              <button
+                onClick={() => setShowCreatorEgg(false)}
+                className="mt-6 px-5 py-2 border border-dune-border hover:border-dune-spice text-white hover:text-dune-spice text-[9px] uppercase tracking-wider transition-colors duration-200 cursor-interactive"
+              >
+                Close Link
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </>
+    );
   }
 
   return (
@@ -1086,7 +1151,9 @@ export default function App() {
             onClick={() => {
               console.log("%c>>> SYSTEM OVERRIDE ACCEPTED", "color: #d37335; font-size: 20px; font-weight: bold;");
               console.log("%c>>> THE SPICE MUST FLOW.", "color: #ffffff; font-size: 16px; font-family: monospace;");
+              console.log("%c>>> SIETCH ENGINE DEVELOPED BY: YASHVINTHAN M", "color: #d37335; font-size: 14px; font-family: monospace; font-weight: bold;");
               console.log("%c>>> MGR YUVA SYNDICATE ACKNOWLEDGES YOUR PRESENCE.", "color: #888888; font-size: 12px; font-family: monospace;");
+              setShowCreatorEgg(true);
             }} 
             className="font-mono text-[9px] text-dune-sand-muted hover:text-dune-spice tracking-[0.2em] uppercase transition-colors group"
           >
@@ -1097,6 +1164,34 @@ export default function App() {
 
       <ProphecyConsole />
 
+      {/* Creator Easter Egg Modal */}
+      <AnimatePresence>
+        {showCreatorEgg && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 50 }}
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9999] w-[90%] max-w-md bg-black/95 border border-dune-spice/80 p-8 rounded shadow-[0_0_50px_rgba(211,115,53,0.5)] backdrop-blur-md font-mono text-center"
+          >
+            <div className="w-12 h-12 rounded-full border border-dune-spice/60 flex items-center justify-center mx-auto mb-4 animate-pulse text-dune-spice text-xl">
+              ⚡
+            </div>
+            <h3 className="text-white text-[10px] tracking-[0.25em] uppercase mb-2">CREATOR PROTOCOL DECRYPTED</h3>
+            <p className="text-dune-spice text-xl font-bold tracking-wider my-4">
+              MADE BY YASHVINTHAN M
+            </p>
+            <p className="text-dune-sand-muted text-[9px] uppercase tracking-widest mt-4">
+              [ SIETCH DEPLOYMENT RE-ENFORCED // 100% RESIDENCE ]
+            </p>
+            <button
+              onClick={() => setShowCreatorEgg(false)}
+              className="mt-6 px-5 py-2 border border-dune-border hover:border-dune-spice text-white hover:text-dune-spice text-[9px] uppercase tracking-wider transition-colors duration-200 cursor-interactive"
+            >
+              Close Link
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
