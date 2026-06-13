@@ -47,7 +47,7 @@ export const EVENT_DETAILS: EventDetail[] = [
       'Presentation time is 5 minutes, followed by 2 minutes of Q&A.',
       'Plagiarism in any form results in immediate disqualification.',
       'Use PPT or PDF compatible with Microsoft PowerPoint 2016 or later.',
-      'Name the file TeamName_PaperTitle_Magizh26.pptx.',
+      'Name the file TeamName_PaperTitle_Magizh\'26.pptx.',
       'A participant may belong to only one team.',
       'Every team member must be present and participate in the presentation.',
       'Formal dress code is mandatory.',

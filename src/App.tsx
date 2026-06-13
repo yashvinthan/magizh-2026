@@ -91,7 +91,7 @@ const MESSAGES = [
   "// CHNL-01: REGISTRATION FOR SHARK TANK EXCEEDS 500 ENTRIES",
   "// CHNL-02: NEW KEYNOTE SPEAKER REVEALED...",
   "// CHNL-03: MGR YUVA DEPLOYING RESOURCES TO SECTOR 4",
-  "// CHNL-04: DUST STORM PROTOCOL DEACTIVATED. WEATHER CLEAR FOR MAGIZH 26",
+  "// CHNL-04: DUST STORM PROTOCOL DEACTIVATED. WEATHER CLEAR FOR MAGIZH '26",
   "// CHNL-05: ADAPTUNE SLOTS FILLING FAST. ENLIST NOW."
 ];
 
@@ -217,7 +217,7 @@ export default function App() {
 
   useEffect(() => {
     console.log(
-      "%c✨ MAGIZH 2026 ✨%c\n\nMade with 🧡 by %cYashvinthan M%c\n\n%c[Sietch Security Protocol Level 9 Active - Type 'yash' to unlock creator module]",
+      "%c✨ MAGIZH '26 ✨%c\n\nMade with 🧡 by %cYashvinthan M%c\n\n%c[Sietch Security Protocol Level 9 Active - Type 'yash' to unlock creator module]",
       "color: #ebd197; font-family: monospace; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px rgba(235,209,151,0.5);",
       "color: #a8a29e; font-family: monospace; font-size: 14px;",
       "color: #d37335; font-family: monospace; font-size: 16px; font-weight: bold; text-shadow: 0 0 8px rgba(211,115,53,0.6);",
@@ -525,7 +525,7 @@ export default function App() {
                 [ 001 // THE GATHERING ]
               </h2>
               <h3 className="font-dune text-xl sm:text-2xl text-white leading-[1.3] tracking-widest uppercase">
-                <ThematicText>ABOUT</ThematicText> <br/><span className="text-dune-spice"><ThematicText>MAGIZH</ThematicText> 2026</span>
+                <ThematicText>ABOUT</ThematicText> <br/><span className="text-dune-spice"><ThematicText>MAGIZH</ThematicText> '26</span>
               </h3>
               
               <div className="mt-12 aspect-square max-w-sm border border-dune-border p-1 bg-dune-surface">
@@ -546,16 +546,16 @@ export default function App() {
             >
               <div className="space-y-8 text-dune-sand-muted font-sans text-base leading-relaxed max-w-2xl border-b border-dune-border pb-12">
                 <p>
-                  <strong className="text-white font-medium">MAGIZH 2026</strong> is a National Level Symposium organized by the MGR YUVA Chapter of Dr. M.G.R. Educational and Research Institute, Chennai. The symposium serves as a vibrant platform where students from various disciplines come together to showcase their technical expertise, creativity, innovation, and leadership skills.
+                  <strong className="text-white font-medium">MAGIZH '26</strong> is a National Level Symposium organized by the MGR YUVA Chapter of Dr. M.G.R. Educational and Research Institute, Chennai. The symposium serves as a vibrant platform where students from various disciplines come together to showcase their technical expertise, creativity, innovation, and leadership skills.
                 </p>
                 <p>
-                  The event aims to foster collaboration among aspiring professionals, encourage innovative thinking, and provide participants with opportunities to engage in meaningful learning experiences through technical and non-technical competitions. MAGIZH 2026 is designed to inspire young minds to transform ideas into impactful solutions while building valuable connections with peers and industry enthusiasts.
+                  The event aims to foster collaboration among aspiring professionals, encourage innovative thinking, and provide participants with opportunities to engage in meaningful learning experiences through technical and non-technical competitions. MAGIZH '26 is designed to inspire young minds to transform ideas into impactful solutions while building valuable connections with peers and industry enthusiasts.
                 </p>
                 <p>
                   Featuring a diverse range of events including Paper Presentation, Poster Designing, Shark Tank, Adaptune, Solo Singing, Adzap, Group Dance, and Face Painting, the symposium celebrates both intellectual excellence and artistic talent. Participants will have the opportunity to compete, learn, network, and gain recognition at a national level.
                 </p>
                 <p className="text-white">
-                  Join us on <strong className="text-dune-spice font-medium">22 June 2026</strong> for a day filled with innovation, creativity, competition, and unforgettable experiences as we come together to make MAGIZH 2026 a grand success.
+                  Join us on <strong className="text-dune-spice font-medium">22 June 2026</strong> for a day filled with innovation, creativity, competition, and unforgettable experiences as we come together to make MAGIZH '26 a grand success.
                 </p>
               </div>
 
@@ -760,7 +760,7 @@ export default function App() {
                  <div>
                    <h4 className="font-serif text-xl sm:text-2xl text-white mb-2 uppercase tracking-wide">Dr. M.G.R Educational and Research <br className="hidden sm:inline" />Institute</h4>
                    <p className="font-sans text-sm text-dune-sand-muted leading-relaxed mb-6">E.V.R. Periyar Salai (NH4 Highway), Maduravoyal, Chennai - 600095</p>
-                   <p className="text-[10px] font-sans text-dune-sand-muted leading-relaxed max-w-sm">Venue for MAGIZH 2026 National Level Symposium. Gates open at 08:00 AM sharp.</p>
+                   <p className="text-[10px] font-sans text-dune-sand-muted leading-relaxed max-w-sm">Venue for MAGIZH '26 National Level Symposium. Gates open at 08:00 AM sharp.</p>
                  </div>
                </div>
                
@@ -1036,7 +1036,7 @@ export default function App() {
                {/* Instagram Channels */}
                <div className="grid sm:grid-cols-2 border-b border-dune-border">
                  {[
-                   { label: 'MAGIZH 2026', handle: '@mgr_magizh26', href: 'https://www.instagram.com/mgr_magizh26/' },
+                   { label: "MAGIZH '26", handle: '@mgr_magizh26', href: 'https://www.instagram.com/mgr_magizh26/' },
                    { label: 'YI YUVA MGR', handle: '@yi.yuva.mgr', href: 'https://www.instagram.com/yi.yuva.mgr/' },
                  ].map((account, index) => (
                    <a
@@ -1093,7 +1093,7 @@ export default function App() {
             &copy; 2026 MGR YUVA CHAPTER
           </p>
           <p className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] text-dune-spice uppercase text-center">
-            // MAGIZH 2026 &mdash; THE SPICE MUST FLOW
+            // MAGIZH '26 &mdash; THE SPICE MUST FLOW
           </p>
           <p className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] text-dune-sand-muted uppercase">
             CHENNAI &middot; INDIA
@@ -1109,7 +1109,7 @@ export default function App() {
             <button 
               className="p-2.5 hover:text-dune-spice hover:bg-dune-spice/10 rounded-full transition-colors cursor-interactive group" 
               aria-label="Share on Twitter" 
-              onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('Join me at MAGIZH 2026 - The Spice Must Flow!')}&url=${encodeURIComponent(window.location.href)}`, '_blank')}
+              onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent("Join me at MAGIZH '26 - The Spice Must Flow!")}&url=${encodeURIComponent(window.location.href)}`, '_blank')}
             >
               <Twitter size={18} className="group-hover:scale-110 transition-transform" />
             </button>
@@ -1132,7 +1132,7 @@ export default function App() {
               target="_blank"
               rel="noreferrer"
               className="p-2.5 hover:text-dune-spice hover:bg-dune-spice/10 rounded-full transition-colors cursor-interactive group"
-              aria-label="Follow MAGIZH 2026 on Instagram"
+              aria-label="Follow MAGIZH '26 on Instagram"
             >
               <Instagram size={18} className="group-hover:scale-110 transition-transform" />
             </a>

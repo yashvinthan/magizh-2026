@@ -18,7 +18,7 @@ export function EventDetailPage({ event, onBack }: Props) {
 
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = `${event.title} | MAGIZH 2026`;
+    document.title = `${event.title} | MAGIZH '26`;
     return () => { document.title = previousTitle; };
   }, [event.title]);
 
@@ -32,7 +32,7 @@ export function EventDetailPage({ event, onBack }: Props) {
         <button onClick={onBack} className="event-detail-back">
           <ArrowLeft size={14} /> All events
         </button>
-        <span className="event-detail-brand"><b>M</b> MGR YUVA / MAGIZH 26</span>
+        <span className="event-detail-brand"><b>M</b> MGR YUVA / MAGIZH '26</span>
         <button onClick={() => setIsRegistrationOpen(true)} className="event-detail-register">Register</button>
       </header>
 

@@ -42,7 +42,7 @@ export function RegistrationModal({ isOpen, onClose }: Props) {
                   Official registration channel
                 </p>
                 <h2 id="registration-title" className="truncate font-dune text-sm uppercase tracking-[0.14em] text-white sm:text-lg">
-                  Join MAGIZH 2026
+                  Join MAGIZH '26
                 </h2>
               </div>
 
