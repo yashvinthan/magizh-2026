@@ -1,4 +1,4 @@
-# robots.txt for MAGIZH 2026 - AI & Human friendly
+# robots.txt for MAGIZH '26 - AI & Human friendly
 User-agent: *
 Allow: /
 
