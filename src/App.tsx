@@ -530,9 +530,9 @@ export default function App() {
               
               <div className="mt-12 aspect-square max-w-sm border border-dune-border p-1 bg-dune-surface">
                  <img 
-                   src="https://images.unsplash.com/photo-1682687220509-61b8a906ca19?q=80&w=2070&auto=format&fit=crop" 
+                   src="image.png" 
                    alt="Symposium Gatherings" 
-                   className="w-full h-full object-cover grayscale-[30%] contrast-110"
+                   className="w-full h-full object-cover contrast-110"
                  />
               </div>
             </motion.div>
