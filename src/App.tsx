@@ -321,19 +321,19 @@ export default function App() {
 
       <main className="relative z-10 w-full">
         {/* HERO SECTION */}
-        <section className={`relative min-h-screen flex flex-col items-center justify-center pt-28 pb-28 md:pb-36 overflow-hidden bg-dune-bg ${mode === 'fremen' ? 'hero-fremen' : ''}`}>
+        <section className={`relative min-h-screen flex flex-col items-center justify-start pt-24 pb-28 md:pb-36 overflow-hidden bg-dune-bg ${mode === 'fremen' ? 'hero-fremen' : ''}`}>
           <div className="absolute inset-0 z-0 pointer-events-none opacity-50 bg-[url('https://i.pinimg.com/originals/2f/48/ef/2f48ef7d6542e1c80ff5f5c03d1a0f3d.jpg')] bg-cover bg-center"></div>
           <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-dune-bg/50 to-dune-bg"></div>
           <DustParticles />
-          <div className="absolute top-24 left-6 right-6 lg:left-12 lg:right-12 z-10 hidden sm:flex items-start justify-between pointer-events-none">
+          <div className="relative w-full px-4 sm:px-6 lg:px-12 z-10 flex items-center justify-between pointer-events-none mb-6 mt-4 gap-2">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.35 }}
-              className="w-48 md:w-56 lg:w-64"
+              className="w-28 xs:w-36 sm:w-48 md:w-56 lg:w-64 flex-shrink-0"
             >
               <img
-                src="drmgr-university-logo.png"
+                src="/drmgr-university-logo.png"
                 alt="Dr. M.G.R Educational and Research Institute University"
                 className="h-auto w-full object-contain drop-shadow-[0_3px_12px_rgba(0,0,0,0.65)]"
               />
@@ -342,7 +342,7 @@ export default function App() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="absolute left-1/2 top-1 -translate-x-1/2 hidden lg:block text-center"
+              className="absolute left-1/2 top-4 -translate-x-1/2 hidden lg:block text-center"
             >
               <span className="block font-mono text-[7px] tracking-[0.34em] text-dune-spice uppercase mb-2">Presented by</span>
               <span className="block font-dune text-sm xl:text-base tracking-[0.18em] text-white uppercase whitespace-nowrap">YI / YUVA / MGR</span>
@@ -352,84 +352,87 @@ export default function App() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.45 }}
-              className="flex items-center gap-5 md:gap-7"
+              className="flex items-center gap-2 xs:gap-3 sm:gap-5 md:gap-7 flex-shrink-0"
             >
               <img
-                src="young-indians-logo.png"
+                src="/young-indians-logo.png"
                 alt="Young Indians - We Can, We Will"
-                className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]"
+                className="h-8 xs:h-11 sm:h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]"
               />
-              <span className="h-14 w-px bg-dune-spice/35" aria-hidden="true" />
+              <span className="h-6 xs:h-10 sm:h-14 w-px bg-dune-spice/35" aria-hidden="true" />
               <img
-                src="yuva-logo.webp"
+                src="/yuva-logo.webp"
                 alt="YUVA"
-                className="h-14 md:h-16 lg:h-20 w-auto object-contain drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]"
+                className="h-7 xs:h-10 sm:h-14 md:h-16 lg:h-20 w-auto object-contain drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]"
               />
             </motion.div>
           </div>
-          <motion.div 
-            style={{ opacity: opacityHero, y: yHero }}
-            className={`relative z-10 text-center max-w-5xl mx-auto px-4 ${mode === 'fremen' ? 'hero-fremen-content' : ''}`}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              <h2 className="font-mono text-dune-spice tracking-[0.3em] uppercase text-[10px] sm:text-xs mb-8">
-                [ A NATIONAL LEVEL SYMPOSIUM // 22 . 06 . 2026 ]
-              </h2>
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              className={`font-dune text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] tracking-[0.2em] text-white mb-8 ${mode === 'fremen' ? 'hero-fremen-title' : ''}`}
-            >
-              <ThematicText>MAGIZH</ThematicText> <span className="text-dune-spice">26</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="max-w-2xl mx-auto text-dune-sand-muted font-sans text-sm sm:text-base leading-relaxed mb-6"
-            >
-              <ThematicText>The spice must flow. So must ideas. MGR YUVA Chapter summons the brightest minds of the nation to converge on the dunes of innovation, creativity, and competition.</ThematicText>
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.8 }}
-            >
-              <Countdown />
-            </motion.div>
-
+          
+          <div className="flex-1 flex flex-col justify-center items-center w-full z-10">
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1 }}
-              className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 w-full max-w-[320px] sm:max-w-none mx-auto px-4"
+              style={{ opacity: opacityHero, y: yHero }}
+              className={`text-center max-w-5xl mx-auto px-4 ${mode === 'fremen' ? 'hero-fremen-content' : ''}`}
             >
-              <MagneticButton 
-                onClick={() => setIsModalOpen(true)}
-                className="w-full sm:w-auto px-8 py-3 bg-transparent border border-dune-spice text-dune-spice transition-all duration-500 font-mono text-[10px] font-semibold tracking-[0.2em] uppercase relative overflow-hidden group hover:border-white hover:text-white"
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
               >
-                <div className="absolute inset-0 w-0 bg-white/10 transition-all duration-500 ease-out group-hover:w-full"></div>
-                <span className="relative z-10 transition-transform duration-300 inline-block group-hover:scale-105">
-                  <ThematicGlitchText>Register Now</ThematicGlitchText>
-                </span>
-              </MagneticButton>
-              <a 
-                href="#events"
-                className="w-full sm:w-auto px-8 py-3 bg-transparent border border-dune-border text-white hover:border-dune-spice hover:text-dune-spice transition-all duration-300 font-mono text-[10px] font-semibold tracking-[0.2em] uppercase group flex items-center justify-center gap-2"
+                <h2 className="font-mono text-dune-spice tracking-[0.3em] uppercase text-[10px] sm:text-xs mb-8">
+                  [ A NATIONAL LEVEL SYMPOSIUM // 22 . 06 . 2026 ]
+                </h2>
+              </motion.div>
+              
+              <motion.h1 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                className={`font-dune text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] tracking-[0.2em] text-white mb-8 ${mode === 'fremen' ? 'hero-fremen-title' : ''}`}
               >
-                <ThematicGlitchText>Explore Events</ThematicGlitchText> <span className="transition-transform duration-300 ease-out group-hover:translate-y-1">↓</span>
-              </a>
+                <ThematicText>MAGIZH</ThematicText> <span className="text-dune-spice">26</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                className="max-w-2xl mx-auto text-dune-sand-muted font-sans text-sm sm:text-base leading-relaxed mb-6"
+              >
+                <ThematicText>The spice must flow. So must ideas. MGR YUVA Chapter summons the brightest minds of the nation to converge on the dunes of innovation, creativity, and competition.</ThematicText>
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                <Countdown />
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+                className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 w-full max-w-[320px] sm:max-w-none mx-auto px-4"
+              >
+                <MagneticButton 
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full sm:w-auto px-8 py-3 bg-transparent border border-dune-spice text-dune-spice transition-all duration-500 font-mono text-[10px] font-semibold tracking-[0.2em] uppercase relative overflow-hidden group hover:border-white hover:text-white"
+                >
+                  <div className="absolute inset-0 w-0 bg-white/10 transition-all duration-500 ease-out group-hover:w-full"></div>
+                  <span className="relative z-10 transition-transform duration-300 inline-block group-hover:scale-105">
+                    <ThematicGlitchText>Register Now</ThematicGlitchText>
+                  </span>
+                </MagneticButton>
+                <a 
+                  href="#events"
+                  className="w-full sm:w-auto px-8 py-3 bg-transparent border border-dune-border text-white hover:border-dune-spice hover:text-dune-spice transition-all duration-300 font-mono text-[10px] font-semibold tracking-[0.2em] uppercase group flex items-center justify-center gap-2"
+                >
+                  <ThematicGlitchText>Explore Events</ThematicGlitchText> <span className="transition-transform duration-300 ease-out group-hover:translate-y-1">↓</span>
+                </a>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
 
           {/* Hero Bottom Rails */}
           <div className="absolute bottom-0 w-full border-t border-dune-border hidden md:block">
@@ -996,7 +999,7 @@ export default function App() {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-5">
                     <div className="flex w-56 max-w-full shrink-0 items-center justify-center">
                       <img
-                        src="drmgr-university-logo.png"
+                        src="/drmgr-university-logo.png"
                         alt="Dr. M.G.R Educational and Research Institute University"
                         className="h-auto w-full object-contain"
                         loading="lazy"
