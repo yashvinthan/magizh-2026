@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dune DOS Player</title>
-    <link rel="stylesheet" href="/js-dos/js-dos.css" />
+    <link rel="stylesheet" href="js-dos/js-dos.css" />
     <style>
       html, body, #dos { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #000; }
       body { cursor: default; }
@@ -21,7 +21,7 @@
         navigator.keyboard.lock = async () => undefined;
       }
     </script>
-    <script src="/js-dos/js-dos.js"></script>
+    <script src="js-dos/js-dos.js"></script>
     <script>
       const notify = (type, message) => parent.postMessage({ source: 'dune-player', type, message }, location.origin);
 
@@ -41,7 +41,7 @@
 
       async function boot() {
         notify('loading');
-        const bundleUrl = `/dune/dune.jsdos?v=${Date.now()}`;
+        const bundleUrl = `dune/dune.jsdos?v=${Date.now()}`;
         const response = await fetch(bundleUrl, { cache: 'no-store' });
         if (!response.ok) throw new Error(`Game archive request failed (${response.status}). Restart the dev server.`);
 
@@ -54,7 +54,7 @@
         const archiveBlob = URL.createObjectURL(new Blob([archive], { type: 'application/zip' }));
         window.Dos(document.getElementById('dos'), {
           url: archiveBlob,
-          pathPrefix: '/js-dos/emulators/',
+          pathPrefix: 'js-dos/emulators/',
           backend: 'dosboxX',
           backendLocked: true,
           autoStart: true,

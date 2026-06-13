@@ -333,7 +333,7 @@ export default function App() {
               className="w-48 md:w-56 lg:w-64"
             >
               <img
-                src="/drmgr-university-logo.png"
+                src="drmgr-university-logo.png"
                 alt="Dr. M.G.R Educational and Research Institute University"
                 className="h-auto w-full object-contain drop-shadow-[0_3px_12px_rgba(0,0,0,0.65)]"
               />
@@ -355,13 +355,13 @@ export default function App() {
               className="flex items-center gap-5 md:gap-7"
             >
               <img
-                src="/young-indians-logo.png"
+                src="young-indians-logo.png"
                 alt="Young Indians - We Can, We Will"
                 className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]"
               />
               <span className="h-14 w-px bg-dune-spice/35" aria-hidden="true" />
               <img
-                src="/yuva-logo.webp"
+                src="yuva-logo.webp"
                 alt="YUVA"
                 className="h-14 md:h-16 lg:h-20 w-auto object-contain drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]"
               />
@@ -996,7 +996,7 @@ export default function App() {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-5">
                     <div className="flex w-56 max-w-full shrink-0 items-center justify-center">
                       <img
-                        src="/drmgr-university-logo.png"
+                        src="drmgr-university-logo.png"
                         alt="Dr. M.G.R Educational and Research Institute University"
                         className="h-auto w-full object-contain"
                         loading="lazy"

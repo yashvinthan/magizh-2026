@@ -152,7 +152,7 @@ export function DuneGame() {
         <iframe
           key={session}
           className="dune-emulator-frame"
-          src={`/dune-player.html?session=${session}`}
+          src={`dune-player.html?session=${session}`}
           title="Original Dune DOS game"
           allow="autoplay; fullscreen; gamepad"
         />
